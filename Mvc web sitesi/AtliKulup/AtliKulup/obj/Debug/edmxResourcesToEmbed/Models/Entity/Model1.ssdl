@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AtDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AtDB.dbo.TBLBILGI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLBILGI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ATLAR" Type="varchar" MaxLength="500" />
+    <Property Name="OZELLIKLER" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityContainer Name="AtDBModelStoreContainer">
+    <EntitySet Name="TBLBILGI" EntityType="Self.TBLBILGI" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLBILGI].[ID] AS [ID], 
+    [TBLBILGI].[ATLAR] AS [ATLAR], 
+    [TBLBILGI].[OZELLIKLER] AS [OZELLIKLER]
+    FROM [dbo].[TBLBILGI] AS [TBLBILGI]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
